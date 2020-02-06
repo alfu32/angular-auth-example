@@ -3,6 +3,9 @@ import { Observable,of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UserLoginRequest, UserLoginResponse } from './authentication';
 import * as md5 from 'js-md5';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import 'firebase/firestore';
 
 // const base = 'http://localhost:3000';
 const base = '';
@@ -12,6 +15,8 @@ export class LoginService {
 
   constructor(
     private httpClient: HttpClient,
+    private firestore: AngularFirestore,
+    public auth: AngularFireAuth,
   ) { }
   nonce(): Observable<string> {
     return of((new Date().getTime() / 60000).toFixed(0));
