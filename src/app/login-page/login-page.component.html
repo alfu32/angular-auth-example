@@ -1,0 +1,19 @@
+<div>
+  <div>{{loginPageTitle}}</div>
+  <hr/>
+  <div class="row">
+    <div class="col">Username</div>
+    <div class="col"><input type="text" [(ngModel)]="login.username"></div>
+  </div>
+  <div class="row">
+    <div class="col">Password</div>
+    <div class="col"><input type="password" [(ngModel)]="login.password"></div>
+  </div>
+  <div class="row">
+    <div class="col"><button (click)="sendAuth()">Cancel</button></div>
+    <div class="col"><button (click)="sendAuth()">Login</button></div>
+  </div>
+</div>
+<pre>
+login: {{login | json}}
+</pre>
