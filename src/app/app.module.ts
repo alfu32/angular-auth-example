@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -25,6 +27,8 @@ const firebaseConfig = {
   imports:      [
     BrowserModule,
     FormsModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(firebaseConfig),
     HttpClientModule ],
   declarations: [ AppComponent, HelloComponent, LoginPageComponent ],
