@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import * as firebase  from '@firebase/app';
 
 @Component({
   selector: 'my-app',
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit  {
   constructor(public auth: AngularFireAuth) {
   }
   login() {
-    this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
   logout() {
     this.auth.signOut();
